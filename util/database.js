@@ -15,3 +15,5 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export { connectDB };
+
+//다른 데이터 베이스 생성을 막으려면 net/ 뒤에 정확한 db 이름을 기입해야함
