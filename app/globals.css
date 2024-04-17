@@ -23,5 +23,23 @@ body {
 
 .list-item p {
   color: gray;
-  margin: 5px 0px;
+  margin: 4px 0px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  background: lightgray;
+  border: none;
+  border-radius: 4px;
 }
