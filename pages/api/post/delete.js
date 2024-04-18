@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         return res.status(400).json({message:"Not exist post"})
       }
 
-      if(session.user.email !== existPost.author){
+      if(session.user.role !== 'admin' && session.user.email !== existPost.author){
         return res.status(400).json({message:"Access denied"})
       }
 
