@@ -68,3 +68,17 @@ button {
   opacity: 1;
   transition: all 1s;
 }
+
+.comment-item{
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0px;
+}
+
+p.comment-author{
+  margin: 0px
+}
+
+p.comment-content{
+  margin: 0px 0px 0px 8px;
+}

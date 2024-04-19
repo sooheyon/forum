@@ -9,13 +9,13 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: "Wrong Method" });
     }
 
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(req, res, authOptions);
 
     if (!session) {
       return res.status(400).json({ message: "Not exist session" });
     }
 
-    const { content, postId } = req.body;
+    const { content, postId } = JSON.parse(req.body);
 
     if (!content || !postId) {
       return res.status(400).json({ message: "Not exist data" });
@@ -25,10 +25,19 @@ export default async function handler(req, res) {
     const result = await db.collection("comment").insertOne({
       content,
       author: session.user.email,
+      author_name: session.user.name,
       parent: new ObjectId(postId),
     });
 
-    return res.status(200);
+    if (!result.insertedId) {
+      throw "error";
+    }
+
+    const newComments = await db
+      .collection("comment")
+      .findOne({ _id: new ObjectId(result.insertedId) });
+
+    return res.status(200).json(newComments);
   } catch (error) {
     console.error(error);
 
