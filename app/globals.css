@@ -69,16 +69,28 @@ button {
   transition: all 1s;
 }
 
-.comment-item{
+.comment-item {
   display: flex;
   flex-direction: row;
   padding: 8px 0px;
 }
 
-p.comment-author{
-  margin: 0px
+p.comment-author {
+  margin: 0px;
 }
 
-p.comment-content{
+p.comment-content {
   margin: 0px 0px 0px 8px;
+}
+
+.dark-mode .navbar {
+  background: #222;
+}
+
+.dark-mode .navbar a {
+  color: white;
+}
+
+.dark-mode-button{
+  cursor: pointer;
 }

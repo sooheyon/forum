@@ -19,3 +19,12 @@ export default async function Home() {
 
   return <div>안녕</div>;
 }
+
+
+//css 속성 중 prefers-color-scheme 사용하면 os테마에 맞춰 css 적용
+/**
+ * 동적 ui 만들기
+ * 1. state 만들어서 ui 현재상태 보관
+ * 2. state에 따라서 ui가 어떻게 보일지 작성
+ * 3. 원할 때 state 변경
+ */
